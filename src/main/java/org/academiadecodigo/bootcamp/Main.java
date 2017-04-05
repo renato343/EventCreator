@@ -2,11 +2,7 @@ package org.academiadecodigo.bootcamp;
 
 import javafx.application.Application;
 import javafx.stage.Stage;
-
-import org.academiadecodigo.bootcamp.model.dao.UserDao;
-import org.academiadecodigo.bootcamp.model.dao.hibernate.HibernateUserDao;
 import org.academiadecodigo.bootcamp.persistence.hibernate.HibernateSessionManager;
-
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -19,7 +15,7 @@ public class Main extends Application {
 
         Navigation navigation;
 
-        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("/springconfig/spring-config.xml");
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("springconfig/spring-config.xml");
         navigation = applicationContext.getBean(Navigation.class);
         navigation.setStage(primaryStage);
         navigation.loadScreen("LoginController");

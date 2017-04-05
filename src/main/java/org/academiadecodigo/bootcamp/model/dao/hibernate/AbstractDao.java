@@ -117,4 +117,12 @@ public abstract class AbstractDao<T> implements InterfaceDao<T> {
     public void setHibernateSessionManager(HibernateSessionManager hibernateSessionManager) {
         this.hibernateSessionManager = hibernateSessionManager;
     }
+
+    public Class<T> getClassType() {
+        return classType;
+    }
+
+    public void setClassType(Class<T> classType) {
+        this.classType = classType;
+    }
 }

@@ -19,7 +19,7 @@ public class HibernateUserDao extends AbstractDao<User> implements UserDao{
     public User readByName(String name) {
 
         Session session = getHibernateSessionManager().getSession();
-        Query query = session.createQuery("from " + classType.getSimpleName() + " where name = :name");
+        Query query = session.createQuery("from User where name = :name");
         query.setString("name", name);
         User object = (User) query.uniqueResult();
         return object;
