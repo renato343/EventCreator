@@ -64,7 +64,7 @@ public class LoginController implements Initializable {
             if (userService.findByName(cadetTextField.getText()) == null) {
                 verificationText.setText(" USER NOT FOUND");
                 verificationText.setVisible(true);
-                System.out.println("User not found");
+
 
             } else {
 
@@ -72,18 +72,18 @@ public class LoginController implements Initializable {
                 if (!userService.authenticate(cadetTextField.getText(), passwordField.getText())) {
                     verificationText.setText(" WRONG PASSWORD");
                     verificationText.setVisible(true);
-                    System.out.println("wrong password");
+
 
                 } else {
                     verificationText.setText("WELCOME");
                     verificationText.setVisible(true);
-                    navigation.loadScreen("LoggedInController");
-                    System.out.println("good password");
+                    navigation.loadScreen("Menu");
+
                 }
             }
         } else {
 
-            System.out.println("-------------------> in the else of Login controller");
+
 
             if (userService.findByMail(emailTextField.getText()) == null) {
 
@@ -97,7 +97,7 @@ public class LoginController implements Initializable {
                     userService.addUser(new User(passwordField.getText(), emailTextField.getText(), cadetTextField.getText()));
                     verificationText.setText("Account Sucessfuly created");
                     verificationText.setVisible(true);
-                    System.out.println("added to the list");
+
                 }
 
             } else {
