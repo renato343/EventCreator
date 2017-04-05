@@ -8,7 +8,6 @@
     <bean id="userServiceImplementation" class="org.academiadecodigo.bootcamp.service.user.UserServiceImpl">
         <constructor-arg name="userDao" ref="hibernateUserDao"/>
         <constructor-arg name="roleDao" ref="hibernateRoleDao"/>
-        <constructor-arg name="transactionManager" ref="hibernateTransactionManager"/>
 
     </bean>
 </beans>

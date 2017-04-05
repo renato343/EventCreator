@@ -45,9 +45,6 @@
         <constructor-arg name="sessionFactory" ref="sessionFactory"/>
     </bean>
 
-    <bean id="hibernateTransactionManager" class="org.academiadecodigo.bootcamp.persistence.hibernate.HibernateTransactionManager">
-        <constructor-arg  name="hibernateSessionManager" ref="hibernateSessionManager"/>
-    </bean>
 
     <bean id="transactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
         <property name="sessionFactory" ref="sessionFactory"/>

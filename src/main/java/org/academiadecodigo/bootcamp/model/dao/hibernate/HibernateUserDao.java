@@ -12,14 +12,13 @@ import org.hibernate.Session;
 public class HibernateUserDao extends AbstractDao<User> implements UserDao{
 
 
-    public HibernateUserDao(HibernateSessionManager hibernateSessionManager) {
-        super(User.class, hibernateSessionManager);
+    public HibernateUserDao() {
 
     }
 
     public User readByName(String name) {
 
-        Session session = hibernateSessionManager.getSession();
+        Session session = getHibernateSessionManager().getSession();
         Query query = session.createQuery("from " + classType.getSimpleName() + " where name = :name");
         query.setString("name", name);
         User object = (User) query.uniqueResult();
@@ -28,7 +27,7 @@ public class HibernateUserDao extends AbstractDao<User> implements UserDao{
 
     public User readByMail(String email) {
 
-        Session session = hibernateSessionManager.getSession();
+        Session session = getHibernateSessionManager().getSession();
         Query query = session.createQuery("from User where email = :email");
         query.setString("email", email);
         User user = (User) query.uniqueResult();

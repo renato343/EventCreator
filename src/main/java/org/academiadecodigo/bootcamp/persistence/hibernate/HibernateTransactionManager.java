@@ -1,3 +1,4 @@
+/*
 package org.academiadecodigo.bootcamp.persistence.hibernate;
 
 
@@ -5,9 +6,10 @@ import org.academiadecodigo.bootcamp.persistence.TransactionManager;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
-/**
+*
  * Created by codecadet on 23/03/17.
- */
+
+
 public class HibernateTransactionManager implements TransactionManager{
 
     HibernateSessionManager hibernateSessionManager;
@@ -40,3 +42,4 @@ public class HibernateTransactionManager implements TransactionManager{
         hibernateSessionManager.roolBackTransaction();
     }
 }
+*/

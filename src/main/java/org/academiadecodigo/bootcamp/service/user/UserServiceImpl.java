@@ -1,17 +1,10 @@
 package org.academiadecodigo.bootcamp.service.user;
 
-import org.academiadecodigo.bootcamp.model.User;
 import org.academiadecodigo.bootcamp.model.Role;
+import org.academiadecodigo.bootcamp.model.User;
 import org.academiadecodigo.bootcamp.model.dao.RoleDao;
 import org.academiadecodigo.bootcamp.model.dao.UserDao;
-import org.academiadecodigo.bootcamp.persistence.TransactionException;
-import org.academiadecodigo.bootcamp.persistence.TransactionManager;
-import org.hibernate.HibernateException;
-import org.hibernate.Query;
-import org.hibernate.Session;
 import org.springframework.transaction.annotation.Transactional;
-
-import java.util.List;
 
 
 /**
@@ -19,24 +12,16 @@ import java.util.List;
  */
 public class UserServiceImpl implements UserService {
 
-    private TransactionManager transactionManager;
     private UserDao userDao;
     private RoleDao roleDao;
     private boolean isAuthenticate = false;
 
-    public UserServiceImpl(TransactionManager transactionManager, UserDao userDao, RoleDao roleDao) {
-        this.transactionManager = transactionManager;
+    public UserServiceImpl( UserDao userDao, RoleDao roleDao) {
         this.userDao = userDao;
         this.roleDao = roleDao;
     }
 
-    public TransactionManager getTransactionManager() {
-        return transactionManager;
-    }
 
-    public void setTransactionManager(TransactionManager transactionManager) {
-        this.transactionManager = transactionManager;
-    }
 
     public UserDao getUserDao() {
         return userDao;

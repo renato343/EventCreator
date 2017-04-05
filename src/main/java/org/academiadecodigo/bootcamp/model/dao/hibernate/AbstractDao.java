@@ -3,14 +3,10 @@ package org.academiadecodigo.bootcamp.model.dao.hibernate;
 import org.academiadecodigo.bootcamp.model.dao.InterfaceDao;
 import org.academiadecodigo.bootcamp.persistence.TransactionException;
 import org.academiadecodigo.bootcamp.persistence.hibernate.HibernateSessionManager;
-import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
-import org.hibernate.internal.CriteriaImpl;
 
-import javax.swing.plaf.nimbus.State;
-import java.sql.Statement;
 import java.util.List;
 
 /**
@@ -21,9 +17,8 @@ public abstract class AbstractDao<T> implements InterfaceDao<T> {
     HibernateSessionManager hibernateSessionManager;
     Class<T> classType;
 
-    public AbstractDao(Class<T> classType, HibernateSessionManager hibernateSessionManager) {
-        this.classType = classType;
-        this.hibernateSessionManager = hibernateSessionManager;
+    public AbstractDao() {
+
     }
 
     @Override
@@ -113,5 +108,13 @@ public abstract class AbstractDao<T> implements InterfaceDao<T> {
         }catch (HibernateException ex){
             throw new TransactionException(ex.getMessage(),ex);
         }
+    }
+
+    public HibernateSessionManager getHibernateSessionManager() {
+        return hibernateSessionManager;
+    }
+
+    public void setHibernateSessionManager(HibernateSessionManager hibernateSessionManager) {
+        this.hibernateSessionManager = hibernateSessionManager;
     }
 }

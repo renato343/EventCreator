@@ -13,13 +13,12 @@ import org.hibernate.Session;
 public class HibernateRoleDao extends AbstractDao<Role> implements RoleDao {
 
 
-    public HibernateRoleDao(HibernateSessionManager hibernateSessionManager) {
-        super(Role.class,hibernateSessionManager);
+    public HibernateRoleDao() {
     }
 
     public Role readByName(String name) {
 
-        Session session = hibernateSessionManager.getSession();
+        Session session = getHibernateSessionManager().getSession();
         Query query = session.createQuery("from " + classType.getSimpleName() + " where name = :name");
         query.setString("name", name);
         Role object = (Role) query.uniqueResult();
@@ -28,7 +27,7 @@ public class HibernateRoleDao extends AbstractDao<Role> implements RoleDao {
 
     public Role readById(Integer id) {
 
-        Session session = hibernateSessionManager.getSession();
+        Session session = getHibernateSessionManager().getSession();
         Query query = session.createQuery("from Role where id = :id");
         query.setString("id", String.valueOf(id));
         Role role = (Role) query.uniqueResult();

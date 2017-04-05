@@ -4,11 +4,11 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean id="hibernateUserDao" class="org.academiadecodigo.bootcamp.model.dao.hibernate.HibernateUserDao">
-        <constructor-arg name="hibernateSessionManager" ref="hibernateSessionManager"/>
+        <property name="hibernateSessionManager" ref="hibernateSessionManager"/>
     </bean>
 
     <bean id="hibernateRoleDao" class="org.academiadecodigo.bootcamp.model.dao.hibernate.HibernateRoleDao">
-        <constructor-arg name="hibernateSessionManager" ref="hibernateSessionManager"/>
+        <property name="hibernateSessionManager" ref="hibernateSessionManager"/>
     </bean>
 
 </beans>
