@@ -9,6 +9,9 @@ public class Event {
     private String period;
     private String local;
 
+    public Event() {
+    }
+
     public Event(String type, String period, String local) {
         this.type = type;
         this.period = period;
@@ -54,6 +57,7 @@ public class Event {
 
         Event event = (Event) o;
 
+        if (id != null ? !id.equals(event.id) : event.id != null) return false;
         if (type != null ? !type.equals(event.type) : event.type != null) return false;
         if (period != null ? !period.equals(event.period) : event.period != null) return false;
         return local != null ? local.equals(event.local) : event.local == null;
@@ -62,7 +66,8 @@ public class Event {
 
     @Override
     public int hashCode() {
-        int result = type != null ? type.hashCode() : 0;
+        int result = id != null ? id.hashCode() : 0;
+        result = 31 * result + (type != null ? type.hashCode() : 0);
         result = 31 * result + (period != null ? period.hashCode() : 0);
         result = 31 * result + (local != null ? local.hashCode() : 0);
         return result;

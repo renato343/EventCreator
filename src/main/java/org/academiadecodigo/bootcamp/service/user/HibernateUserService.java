@@ -93,10 +93,7 @@ public class HibernateUserService implements UserService {
 
     }
 
-    @Override
-    public void addRoleToUser(Role role, String username) {
 
-    }
 
     @Override
     public int count() {

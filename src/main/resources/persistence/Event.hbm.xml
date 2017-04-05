@@ -4,7 +4,7 @@
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
-    <class name="org.academiadecodigo.bootcamp.model.Event" table="role">
+    <class name="org.academiadecodigo.bootcamp.model.Event" table="event">
         <id name="id" column="id" type="int">
             <generator class="identity"/>
         </id>
