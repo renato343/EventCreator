@@ -3,14 +3,16 @@ package org.academiadecodigo.bootcamp.controller;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.MenuItem;
+import javafx.scene.control.*;
 import org.academiadecodigo.bootcamp.Navigation;
 import org.academiadecodigo.bootcamp.service.user.UserService;
+import org.hibernate.mapping.Array;
+import org.hibernate.mapping.Table;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class LogedController implements Initializable{
+public class LogedController implements Initializable {
 
     public Navigation getNavigation() {
         return navigation;
@@ -26,32 +28,80 @@ public class LogedController implements Initializable{
         return userService;
     }
 
-    private UserService userService;
-
-    @FXML
-    private MenuItem logout;
-
-    @FXML
-    private MenuItem quit;
-
-    @FXML
-    void logout(ActionEvent event) {
-        navigation.back();
-
-    }
-
-    @FXML
-    void quit(ActionEvent event) {
-        System.exit(0);
-
-    }
-
     public void setUserService(UserService userService) {
         this.userService = userService;
     }
 
+    private UserService userService;
+
+    @FXML
+    private Button viewevents;
+
+    @FXML
+    private Button controlpanels;
+
+    @FXML
+    private Button createevents;
+    @FXML
+    private Button createnow;
+
+    @FXML
+    private SplitMenuButton filterperiod;
+
+    @FXML
+    private SplitMenuButton filterlocal;
+
+    @FXML
+    private SplitMenuButton filtertype;
+
+    @FXML
+    private TableView eventtable;
+
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
+    }
+
+    public void createevent(ActionEvent actionEvent) {
+        filterperiod.setVisible(true);
+        filtertype.setVisible(true);
+        filterlocal.setVisible(true);
+        createnow.setVisible(true);
+        eventtable.setVisible(false);
+
+
+    }
+
+    public void viewevents(ActionEvent actionEvent) {
+        filterperiod.setVisible(true);
+        filtertype.setVisible(true);
+        filterlocal.setVisible(true);
+        eventtable.setVisible(true);
+        createnow.setVisible(false);
+
+
+        eventtable.getItems().add("asdasdasda");
+    }
+
+    public void controlpanel(ActionEvent actionEvent) {
+
+        navigation.loadScreen("Menu");
+    }
+
+    public void filterperiod(ActionEvent actionEvent) {
+        //Seletor de periodo temporal
+    }
+
+    public void filterlocal(ActionEvent actionEvent) {
+        //Seletor de local
+    }
+
+    public void filtertype(ActionEvent actionEvent) {
+        //Seletor de tipo
+    }
+
+    public void createnow(ActionEvent actionEvent) {
+        //Inserir evento na base de dados
     }
 }

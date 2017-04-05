@@ -19,8 +19,8 @@ public class Navigation {
 
     private static Navigation instance = null;
 
-    private final int MIN_WIDTH = 600;
-    private final int MIN_HEIGHT = 300;
+    private final int MIN_WIDTH = 650;
+    private final int MIN_HEIGHT = 450;
 
     //Navigation History
     private LinkedList<Scene> scenes = new LinkedList<Scene>();
@@ -93,7 +93,7 @@ public class Navigation {
 
     public void setScene(Scene scene) {
 
-        stage.setTitle("Hello World");
+        stage.setTitle("Event Creator");
         stage.setScene(scene);
         stage.show();
     }
