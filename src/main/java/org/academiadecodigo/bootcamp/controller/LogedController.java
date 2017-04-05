@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import org.academiadecodigo.bootcamp.Navigation;
+import org.academiadecodigo.bootcamp.model.Event;
 import org.academiadecodigo.bootcamp.service.user.UserService;
 import org.hibernate.mapping.Array;
 import org.hibernate.mapping.Table;
@@ -69,8 +70,6 @@ public class LogedController implements Initializable {
         filterlocal.setVisible(true);
         createnow.setVisible(true);
         eventtable.setVisible(false);
-
-
     }
 
     public void viewevents(ActionEvent actionEvent) {
@@ -79,13 +78,11 @@ public class LogedController implements Initializable {
         filterlocal.setVisible(true);
         eventtable.setVisible(true);
         createnow.setVisible(false);
-
-
-        eventtable.getItems().add("asdasdasda");
+        Event event = new Event("Football","Morning","Campo1");
+        eventtable.getItems().add(event);
     }
 
     public void controlpanel(ActionEvent actionEvent) {
-
         navigation.loadScreen("Menu");
     }
 
