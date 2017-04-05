@@ -1,8 +1,6 @@
 package org.academiadecodigo.bootcamp.service.user;
 
-import org.academiadecodigo.bootcamp.model.Role;
 import org.academiadecodigo.bootcamp.model.User;
-import org.academiadecodigo.bootcamp.model.dao.RoleDao;
 import org.academiadecodigo.bootcamp.model.dao.UserDao;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -13,12 +11,10 @@ import org.springframework.transaction.annotation.Transactional;
 public class UserServiceImpl implements UserService {
 
     private UserDao userDao;
-    private RoleDao roleDao;
     private boolean isAuthenticate = false;
 
-    public UserServiceImpl( UserDao userDao, RoleDao roleDao) {
+    public UserServiceImpl( UserDao userDao) {
         this.userDao = userDao;
-        this.roleDao = roleDao;
     }
 
 
@@ -31,13 +27,7 @@ public class UserServiceImpl implements UserService {
         this.userDao = userDao;
     }
 
-    public RoleDao getRoleDao() {
-        return roleDao;
-    }
 
-    public void setRoleDao(RoleDao roleDao) {
-        this.roleDao = roleDao;
-    }
 
     @Override
     public String getName() {
@@ -93,15 +83,7 @@ public class UserServiceImpl implements UserService {
 
     }
 
-    @Transactional
-    @Override
-    public void addRoleToUser(Role role, String username) {
 
-
-        if (userDao.readByName(username) != null) {
-            userDao.readByName(username).addRole(role);
-        }
-    }
 
     @Transactional
     @Override

@@ -36,7 +36,7 @@
         <property name="mappingResources">
             <list>
                 <value>persistence/User.hbm.xml</value>
-                <value>persistence/Role.hbm.xml</value>
+                <value>persistence/Event.hbm.xml</value>
             </list>
         </property>
     </bean>

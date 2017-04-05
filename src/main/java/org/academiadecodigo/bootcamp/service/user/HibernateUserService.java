@@ -1,7 +1,6 @@
 package org.academiadecodigo.bootcamp.service.user;
 
 import org.academiadecodigo.bootcamp.model.User;
-import org.academiadecodigo.bootcamp.model.Role;
 import org.academiadecodigo.bootcamp.persistence.hibernate.HibernateSessionManager;
 import org.hibernate.HibernateException;
 import org.hibernate.Query;

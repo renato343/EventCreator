@@ -4,10 +4,11 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
-
     <bean id="userServiceImplementation" class="org.academiadecodigo.bootcamp.service.user.UserServiceImpl">
         <constructor-arg name="userDao" ref="hibernateUserDao"/>
-        <constructor-arg name="roleDao" ref="hibernateRoleDao"/>
+    </bean>
 
+    <bean id="eventServiceImplementatio" class="org.academiadecodigo.bootcamp.service.event.EventServiceImpl">
+        <property name="eventDao" ref="hibernateEventDao"/>
     </bean>
 </beans>
