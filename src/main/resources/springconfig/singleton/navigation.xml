@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="logedcontroller" class="org.academiadecodigo.bootcamp.controller.LogedController">
+        <property name="userService" ref="userServiceImplementation"/>
+        <property name="navigation" ref="navigation"/>
+    </bean>
+
+
+    <bean id="logincontroller" class="org.academiadecodigo.bootcamp.controller.LoginController">
+        <property name="userService" ref="userServiceImplementation"/>
+        <property name="navigation" ref="navigation"/>
+    </bean>
+
+
+    <bean id="navigation" class="org.academiadecodigo.bootcamp.Navigation">
+        <property name="controllers">
+            <map>
+                <entry key="LogedController" value-ref="logedcontroller"/>
+                <entry key="LoginController" value-ref="logincontroller"/>
+            </map>
+        </property>
+
+    </bean>
+</beans>
