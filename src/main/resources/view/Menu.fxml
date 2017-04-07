@@ -2,6 +2,8 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.SplitMenuButton?>
 <?import javafx.scene.control.TableColumn?>
@@ -9,12 +11,12 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="504.0" prefWidth="758.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.academiadecodigo.bootcamp.controller.LogedController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="504.0" prefWidth="758.0" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.academiadecodigo.bootcamp.controller.LogedController">
    <children>
       <Button fx:id="createevent" layoutX="457.0" layoutY="49.0" mnemonicParsing="false" onAction="#createevent" text="Create Event" />
       <Button fx:id="viewevents" layoutX="45.0" layoutY="49.0" mnemonicParsing="false" onAction="#viewevents" text="View Events" />
       <Button fx:id="controlpanels" layoutX="250.0" layoutY="49.0" mnemonicParsing="false" onAction="#controlpanel" text="Control Panel" />
-      <Label fx:id="welcomelabel" layoutX="45.0" layoutY="14.0" prefHeight="17.0" prefWidth="153.0" text="Welcome Rui">
+      <Label fx:id="welcomelabel" layoutX="30.0" layoutY="27.0" prefHeight="17.0" prefWidth="153.0" text="Welcome Rui">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
@@ -50,5 +52,20 @@
             <TableColumn prefWidth="151.0" text="Period" />
         </columns>
       </TableView>
+      <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="758.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Menu">
+            <items>
+              <MenuItem fx:id="logout" mnemonicParsing="false" onAction="#logout" text="Logout" />
+                  <MenuItem fx:id="quit" mnemonicParsing="false" onAction="#quit" text="Quit" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
    </children>
 </Pane>

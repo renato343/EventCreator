@@ -43,6 +43,7 @@ public class LogedController implements Initializable {
 
     @FXML
     private Button createevents;
+
     @FXML
     private Button createnow;
 
@@ -57,6 +58,12 @@ public class LogedController implements Initializable {
 
     @FXML
     private TableView eventtable;
+
+    @FXML
+    private MenuItem logout;
+
+    @FXML
+    private MenuItem quit;
 
 
     @Override
@@ -83,7 +90,7 @@ public class LogedController implements Initializable {
     }
 
     public void controlpanel(ActionEvent actionEvent) {
-        navigation.loadScreen("Menu");
+        navigation.loadScreen("ControlPanel");
     }
 
     public void filterperiod(ActionEvent actionEvent) {
@@ -100,5 +107,13 @@ public class LogedController implements Initializable {
 
     public void createnow(ActionEvent actionEvent) {
         //Inserir evento na base de dados
+    }
+
+    public void logout(ActionEvent actionEvent) {
+        navigation.loadScreen("LoginController");
+    }
+
+    public void quit(ActionEvent actionEvent) {
+        System.exit(0);
     }
 }

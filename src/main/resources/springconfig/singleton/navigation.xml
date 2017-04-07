@@ -8,6 +8,10 @@
         <property name="navigation" ref="navigation"/>
     </bean>
 
+    <bean id="panelcontroller" class="org.academiadecodigo.bootcamp.controller.PanelController">
+        <property name="navigation" ref="navigation"/>
+    </bean>
+
 
     <bean id="logincontroller" class="org.academiadecodigo.bootcamp.controller.LoginController">
         <property name="userService" ref="userServiceImplementation"/>
@@ -20,6 +24,7 @@
             <map>
                 <entry key="LogedController" value-ref="logedcontroller"/>
                 <entry key="LoginController" value-ref="logincontroller"/>
+                <entry key="PanelController" value-ref="panelcontroller"/>
             </map>
         </property>
 
