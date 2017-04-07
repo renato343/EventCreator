@@ -15,7 +15,7 @@ public interface UserService extends Service {
     User findByName(String name);
 
     User findByMail(String name);
-
+    String getUserAuth();
 
     int count();
 

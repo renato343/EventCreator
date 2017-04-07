@@ -12,12 +12,11 @@ public class UserServiceImpl implements UserService {
 
     private UserDao userDao;
     private boolean isAuthenticate = false;
+    private String userAuth;
 
     public UserServiceImpl( UserDao userDao) {
         this.userDao = userDao;
     }
-
-
 
     public UserDao getUserDao() {
         return userDao;
@@ -27,11 +26,13 @@ public class UserServiceImpl implements UserService {
         this.userDao = userDao;
     }
 
-
-
     @Override
     public String getName() {
         return UserService.class.getSimpleName();
+    }
+
+    public String getUserAuth() {
+        return userAuth;
     }
 
     @Transactional
@@ -43,6 +44,7 @@ public class UserServiceImpl implements UserService {
                 userDao.readByName(name).getPassword().equals(pass)) {
 
             isAuthenticate = true;
+            userAuth=name;
         } else {
             isAuthenticate = false;
         }

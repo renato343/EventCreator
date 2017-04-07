@@ -1,11 +1,15 @@
 package org.academiadecodigo.bootcamp.controller;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import org.academiadecodigo.bootcamp.Navigation;
 import org.academiadecodigo.bootcamp.model.Event;
+import org.academiadecodigo.bootcamp.model.User;
 import org.academiadecodigo.bootcamp.service.user.UserService;
 import org.hibernate.mapping.Array;
 import org.hibernate.mapping.Table;
@@ -34,6 +38,10 @@ public class LogedController implements Initializable {
     }
 
     private UserService userService;
+
+
+    @FXML
+    private Label welcomelabel;
 
     @FXML
     private Button viewevents;
@@ -65,10 +73,39 @@ public class LogedController implements Initializable {
     @FXML
     private MenuItem quit;
 
+    @FXML
+    private TableColumn localcolumn;
+
+    @FXML
+    private TableColumn typecolumn;
+
+    @FXML
+    private TableColumn periodcolumn;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        ObservableList<Event> data =
+                FXCollections.observableArrayList(
+                        new Event("Football", "Morning", "Campo1"),
+                        new Event("Football", "Morning", "Campo2")
+                );
 
+
+        localcolumn.setCellValueFactory(new PropertyValueFactory<Event,String>("local"));
+
+
+        typecolumn.setCellValueFactory(
+                new PropertyValueFactory<Event,String>("type")
+        );
+
+        periodcolumn.setCellValueFactory(
+                new PropertyValueFactory<Event,String>("period")
+        );
+
+        eventtable.setItems(data);
+
+
+        welcomelabel.setText("Welcome "+ userService.getUserAuth());
     }
 
     public void createevent(ActionEvent actionEvent) {
@@ -85,8 +122,6 @@ public class LogedController implements Initializable {
         filterlocal.setVisible(true);
         eventtable.setVisible(true);
         createnow.setVisible(false);
-        Event event = new Event("Football","Morning","Campo1");
-        eventtable.getItems().add(event);
     }
 
     public void controlpanel(ActionEvent actionEvent) {

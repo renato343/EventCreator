@@ -93,6 +93,10 @@ public class HibernateUserService implements UserService {
 
     }
 
+    @Override
+    public String getUserAuth() {
+        return null;
+    }
 
 
     @Override
