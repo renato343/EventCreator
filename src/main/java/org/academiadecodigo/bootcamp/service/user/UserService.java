@@ -1,7 +1,6 @@
 package org.academiadecodigo.bootcamp.service.user;
 
 import org.academiadecodigo.bootcamp.model.User;
-import org.academiadecodigo.bootcamp.model.Role;
 import org.academiadecodigo.bootcamp.service.Service;
 
 /**
@@ -17,7 +16,6 @@ public interface UserService extends Service {
 
     User findByMail(String name);
 
-    void addRoleToUser(Role role, String username);
 
     int count();
 

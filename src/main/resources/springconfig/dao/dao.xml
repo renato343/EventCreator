@@ -7,7 +7,7 @@
         <property name="hibernateSessionManager" ref="hibernateSessionManager"/>
     </bean>
 
-    <bean id="hibernateRoleDao" class="org.academiadecodigo.bootcamp.model.dao.hibernate.HibernateRoleDao">
+    <bean id="hibernateEventDao" class="org.academiadecodigo.bootcamp.model.dao.hibernate.HibernateEventDao">
         <property name="hibernateSessionManager" ref="hibernateSessionManager"/>
     </bean>
 

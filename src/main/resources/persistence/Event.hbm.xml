@@ -4,13 +4,14 @@
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
-    <class name="org.academiadecodigo.bootcamp.model.Role" table="role">
+    <class name="org.academiadecodigo.bootcamp.model.Event" table="event">
         <id name="id" column="id" type="int">
             <generator class="identity"/>
         </id>
 
-        <property name="name" column="rolename" type="string"/>
-        <property name="description" column="description" type="string"/>
+        <property name="type" column="type" type="string"/>
+        <property name="local" column="local" type="string"/>
+        <property name="period" column="period" type="string"/>
 
     </class>
 
