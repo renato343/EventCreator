@@ -22,8 +22,6 @@ public class LogedController implements Initializable {
 
     Navigation navigation;
 
-    private UserService userService;
-
     private EventService eventService;
 
     public void setNavigation(Navigation navigation) {
@@ -45,6 +43,8 @@ public class LogedController implements Initializable {
     public void setUserService(UserService userService) {
         this.userService = userService;
     }
+
+    private UserService userService;
 
     @FXML
     private Label welcomelabel;
@@ -88,6 +88,12 @@ public class LogedController implements Initializable {
     @FXML
     private TableColumn periodcolumn;
 
+    @FXML
+    private Button filternow;
+
+    @FXML
+    private Button joinevent;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         ObservableList<Event> data =
@@ -120,6 +126,8 @@ public class LogedController implements Initializable {
         filterlocal.setVisible(true);
         createnow.setVisible(true);
         eventtable.setVisible(false);
+        joinevent.setVisible(false);
+        filternow.setVisible(false);
 
     }
 
@@ -129,6 +137,8 @@ public class LogedController implements Initializable {
         filterlocal.setVisible(true);
         eventtable.setVisible(true);
         createnow.setVisible(false);
+        filternow.setVisible(true);
+        joinevent.setVisible(true);
 
     }
 
@@ -165,5 +175,36 @@ public class LogedController implements Initializable {
 
     public void quit(ActionEvent actionEvent) {
         System.exit(0);
+    }
+
+    public void morningperiod(ActionEvent actionEvent) {
+        filterperiod.setText("Morning");
+    }
+
+    public void afternoonperiod(ActionEvent actionEvent) {
+        filterperiod.setText("Afternoon");
+    }
+
+    public void localcampo1(ActionEvent actionEvent) {
+        filterlocal.setText("Campo 1");
+    }
+
+    public void localcampo2(ActionEvent actionEvent) {
+        filterlocal.setText("Campo 2");
+    }
+
+    public void typefootball(ActionEvent actionEvent) {
+        filtertype.setText("Football");
+    }
+
+    public void typebasketball(ActionEvent actionEvent) {
+        filtertype.setText("Basketball");
+    }
+
+    public void filternow(ActionEvent actionEvent) {
+
+    }
+
+    public void joinevent(ActionEvent actionEvent) {
     }
 }

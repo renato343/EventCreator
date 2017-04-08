@@ -38,7 +38,7 @@ public class EventServiceImpl implements EventService {
     @Override
     public void addEvent(Event event) {
 
-        if(!findAll().contains(event)) {
+       if(!findAll().contains(event)) {
             eventDao.create(event);
         }
 

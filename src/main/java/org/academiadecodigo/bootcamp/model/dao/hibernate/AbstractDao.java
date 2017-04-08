@@ -85,6 +85,7 @@ public abstract class AbstractDao<T> implements InterfaceDao<T> {
             Session session = hibernateSessionManager.getSession();
             Query query = session.createQuery("from " + classType.getSimpleName());
             List allUsers = query.list();
+            System.out.println(allUsers);
             return allUsers;
 
         }catch (HibernateException ex){
