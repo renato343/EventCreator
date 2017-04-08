@@ -39,7 +39,6 @@ public class LogedController implements Initializable {
 
     private UserService userService;
 
-
     @FXML
     private Label welcomelabel;
 
