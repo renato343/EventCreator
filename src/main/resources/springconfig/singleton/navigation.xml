@@ -5,6 +5,7 @@
 
     <bean id="logedcontroller" class="org.academiadecodigo.bootcamp.controller.LogedController">
         <property name="userService" ref="userServiceImplementation"/>
+        <property name="eventService" ref="eventServiceImplementatio"/>
         <property name="navigation" ref="navigation"/>
     </bean>
 
