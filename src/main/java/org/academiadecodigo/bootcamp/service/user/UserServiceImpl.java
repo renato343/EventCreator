@@ -14,6 +14,8 @@ public class UserServiceImpl implements UserService {
     private boolean isAuthenticate = false;
     private String userAuth;
 
+
+
     public UserServiceImpl( UserDao userDao) {
         this.userDao = userDao;
     }

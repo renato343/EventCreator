@@ -2,6 +2,7 @@ package org.academiadecodigo.bootcamp.service.event;
 
 import org.academiadecodigo.bootcamp.model.Event;
 import org.academiadecodigo.bootcamp.model.dao.EventDao;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -33,6 +34,7 @@ public class EventServiceImpl implements EventService {
         return EventService.class.getSimpleName();
     }
 
+    @Transactional
     @Override
     public void addEvent(Event event) {
 
@@ -42,6 +44,7 @@ public class EventServiceImpl implements EventService {
 
     }
 
+    @Transactional
     @Override
     public Event findByType(String type) {
 
@@ -50,6 +53,7 @@ public class EventServiceImpl implements EventService {
         return event;
     }
 
+    @Transactional
     @Override
     public Event findByPeriod(String period) {
 
@@ -58,6 +62,7 @@ public class EventServiceImpl implements EventService {
         return event;
     }
 
+    @Transactional
     @Override
     public Event findByLocal(String name) {
 
@@ -66,7 +71,7 @@ public class EventServiceImpl implements EventService {
         return event;
     }
 
-
+    @Transactional
     @Override
     public List findAll() {
 
@@ -75,6 +80,7 @@ public class EventServiceImpl implements EventService {
 
     }
 
+    @Transactional
     @Override
     public int count() {
         int count;

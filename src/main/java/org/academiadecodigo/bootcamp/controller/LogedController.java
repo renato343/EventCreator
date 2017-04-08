@@ -46,11 +46,6 @@ public class LogedController implements Initializable {
         this.userService = userService;
     }
 
-<<<<<<< HEAD
-    private UserService userService;
-=======
->>>>>>> master
-
     @FXML
     private Label welcomelabel;
 

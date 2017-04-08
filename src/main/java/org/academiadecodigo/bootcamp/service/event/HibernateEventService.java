@@ -15,6 +15,7 @@ import java.util.List;
 public class HibernateEventService implements EventService {
 
     HibernateSessionManager hibernateSessionManager;
+    Session session;
 
     public HibernateSessionManager getHibernateSessionManager() {
         return hibernateSessionManager;
@@ -24,7 +25,6 @@ public class HibernateEventService implements EventService {
         this.hibernateSessionManager = hibernateSessionManager;
     }
 
-
     @Override
     public String getName() {
         return UserService.class.getSimpleName();
@@ -33,25 +33,70 @@ public class HibernateEventService implements EventService {
     @Override
     public void addEvent(Event event) {
 
+        try {
+
+
+            session = hibernateSessionManager.beginTransaction();
+
+            if (!findAll().contains(event)) {
+                session.save(event);
+            } else {
+                return;
+            }
+
+            hibernateSessionManager.commitTransaction();
+
+        } catch (HibernateException ex) {
+
+            hibernateSessionManager.roolBackTransaction();
+        }
     }
 
     @Override
     public Event findByType(String name) {
-        return null;
+
+        Session session = hibernateSessionManager.beginTransaction();
+        Query query = session.createQuery("from event where type = :type");
+        query.setString("type", name);
+        Event event = (Event) query.uniqueResult();
+        hibernateSessionManager.commitTransaction();
+        return event;
+
+
     }
 
     @Override
     public Event findByPeriod(String name) {
-        return null;
+
+        Session session = hibernateSessionManager.beginTransaction();
+        Query query = session.createQuery("from event where period = :period");
+        query.setString("period", name);
+        Event event = (Event) query.uniqueResult();
+        hibernateSessionManager.commitTransaction();
+        return event;
+
     }
 
     @Override
     public Event findByLocal(String name) {
-        return null;
+
+        Session session = hibernateSessionManager.beginTransaction();
+        Query query = session.createQuery("from event where local = :local");
+        query.setString("local", name);
+        Event event = (Event) query.uniqueResult();
+        hibernateSessionManager.commitTransaction();
+        return event;
+
     }
+
     @Override
     public List findAll() {
-        return null;
+
+        Session session = hibernateSessionManager.beginTransaction();
+        Query query = session.createQuery("SELECT (*) FROM event");
+        List eventList = (List) query.uniqueResult();
+        hibernateSessionManager.commitTransaction();
+        return eventList;
     }
 
     @Override
@@ -61,7 +106,7 @@ public class HibernateEventService implements EventService {
 
         try {
             Session session = hibernateSessionManager.beginTransaction();
-            size = ((Long) session.createQuery("SELECT count (*) from User").uniqueResult()).intValue();
+            size = ((Long) session.createQuery("SELECT count (*) from event").uniqueResult()).intValue();
             hibernateSessionManager.commitTransaction();
 
         } catch (HibernateException ex) {
