@@ -10,6 +10,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import org.academiadecodigo.bootcamp.Navigation;
 import org.academiadecodigo.bootcamp.model.Event;
 import org.academiadecodigo.bootcamp.model.User;
+import org.academiadecodigo.bootcamp.service.event.EventService;
 import org.academiadecodigo.bootcamp.service.user.UserService;
 import org.hibernate.mapping.Array;
 import org.hibernate.mapping.Table;
@@ -19,15 +20,23 @@ import java.util.ResourceBundle;
 
 public class LogedController implements Initializable {
 
-    public Navigation getNavigation() {
-        return navigation;
-    }
+    Navigation navigation;
+
+    private UserService userService;
+
+    private EventService eventService;
 
     public void setNavigation(Navigation navigation) {
         this.navigation = navigation;
     }
 
-    Navigation navigation;
+    public EventService getEventService() {
+        return eventService;
+    }
+
+    public void setEventService(EventService eventService) {
+        this.eventService = eventService;
+    }
 
     public UserService getUserService() {
         return userService;
@@ -36,8 +45,6 @@ public class LogedController implements Initializable {
     public void setUserService(UserService userService) {
         this.userService = userService;
     }
-
-    private UserService userService;
 
 
     @FXML
@@ -114,6 +121,7 @@ public class LogedController implements Initializable {
         filterlocal.setVisible(true);
         createnow.setVisible(true);
         eventtable.setVisible(false);
+
     }
 
     public void viewevents(ActionEvent actionEvent) {
@@ -122,6 +130,7 @@ public class LogedController implements Initializable {
         filterlocal.setVisible(true);
         eventtable.setVisible(true);
         createnow.setVisible(false);
+
     }
 
     public void controlpanel(ActionEvent actionEvent) {
@@ -141,7 +150,14 @@ public class LogedController implements Initializable {
     }
 
     public void createnow(ActionEvent actionEvent) {
-        //Inserir evento na base de dados
+
+        Event event = new Event();
+        event.setLocal(filterlocal.getText());
+        event.setPeriod(filterperiod.getText());
+        event.setType(filtertype.getText());
+
+        eventService.addEvent(event);
+
     }
 
     public void logout(ActionEvent actionEvent) {

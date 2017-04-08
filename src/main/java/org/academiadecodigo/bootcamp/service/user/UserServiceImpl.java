@@ -70,7 +70,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public User findByName(String name) {
 
-        User user = null;
+        User user;
         user = userDao.readByName(name);
         return user;
 
@@ -84,8 +84,6 @@ public class UserServiceImpl implements UserService {
         return user;
 
     }
-
-
 
     @Transactional
     @Override
