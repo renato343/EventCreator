@@ -104,9 +104,6 @@ public class LogedController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-
-
-
         welcomelabel.setText("Welcome " + userService.getUserAuth());
     }
 
