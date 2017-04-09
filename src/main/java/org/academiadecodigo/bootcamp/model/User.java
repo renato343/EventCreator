@@ -64,7 +64,6 @@ public class User {
         this.events = events;
     }
 
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

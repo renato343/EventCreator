@@ -22,14 +22,6 @@ public class EventServiceImpl implements EventService {
     public EventServiceImpl() {
     }
 
-    public EventDao getEventDao() {
-        return eventDao;
-    }
-
-    public void setEventDao(EventDao eventDao) {
-        this.eventDao = eventDao;
-    }
-
     @Transactional
     @Override
     public String getName() {
@@ -50,7 +42,6 @@ public class EventServiceImpl implements EventService {
             System.out.println("nao adicionei");
         }
     }
-
 
     @Override
     public Event findByType(String type) {
@@ -85,10 +76,16 @@ public class EventServiceImpl implements EventService {
 
     }
 
+    @Transactional
     @Override
     public int count() {
         int count;
         count = eventDao.count();
         return count;
+    }
+
+    @Override
+    public void updateEvent(Event event) {
+        eventDao.update(event);
     }
 }

@@ -9,11 +9,8 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import org.academiadecodigo.bootcamp.Navigation;
 import org.academiadecodigo.bootcamp.model.Event;
-import org.academiadecodigo.bootcamp.model.User;
 import org.academiadecodigo.bootcamp.service.event.EventService;
 import org.academiadecodigo.bootcamp.service.user.UserService;
-import org.hibernate.mapping.Array;
-import org.hibernate.mapping.Table;
 
 import java.net.URL;
 import java.util.List;
@@ -220,6 +217,10 @@ public class LogedController implements Initializable {
     public void joinevent(ActionEvent actionEvent) {
 
         Event event = (Event) eventtable.getSelectionModel().getSelectedItem();
+        event.setNumberOfPlayers(1);
+        event.getEventUsersList().add(userService.findByName(userService.getUserAuth()));
+        eventService.updateEvent(event);
+
 
 
     }

@@ -1,5 +1,7 @@
 package org.academiadecodigo.bootcamp.model;
 
+import java.util.List;
+
 /**
  * Created by codecadet on 05/04/17.
  */
@@ -8,6 +10,25 @@ public class Event {
     private String type;
     private String period;
     private String local;
+
+    private int numberOfPlayers;
+    private List<User> eventUsersList;
+
+    public List<User> getEventUsersList() {
+        return eventUsersList;
+    }
+
+    public void setEventUsersList(List<User> eventUsersList) {
+        this.eventUsersList = eventUsersList;
+    }
+
+    public int getNumberOfPlayers() {
+        return numberOfPlayers;
+    }
+
+    public void setNumberOfPlayers(int numberOfPlayers) {
+        this.numberOfPlayers = this.numberOfPlayers + numberOfPlayers;
+    }
 
     public Event() {
     }
