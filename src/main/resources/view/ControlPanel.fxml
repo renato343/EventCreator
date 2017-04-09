@@ -8,6 +8,7 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
@@ -50,7 +51,7 @@
             <Image url="@../LogoFactory.jpg" />
          </image>
       </ImageView>
-      <Button fx:id="changepassword" layoutX="59.0" layoutY="385.0" mnemonicParsing="false" text="Change password">
+      <Button fx:id="modifyuserinfo" layoutX="59.0" layoutY="385.0" mnemonicParsing="false" onAction="#modifyuserinfo" text="Modify User Info">
          <font>
             <Font name="Gill Sans" size="13.0" />
          </font>
@@ -61,5 +62,20 @@
          </font>
       </Button>
       <Label fx:id="eventremoved" layoutX="332.0" layoutY="433.0" prefHeight="17.0" prefWidth="99.0" text="Event removed" visible="false" />
+      <Label fx:id="labelusername" layoutX="208.0" layoutY="416.0" text="Input new Username:" visible="false">
+         <font>
+            <Font name="Gill Sans" size="13.0" />
+         </font></Label>
+      <Label fx:id="labelpassword" layoutX="209.0" layoutY="450.0" text="Input new Password:" visible="false">
+         <font>
+            <Font name="Gill Sans" size="13.0" />
+         </font></Label>
+      <TextField fx:id="username" layoutX="338.0" layoutY="411.0" visible="false" />
+      <TextField fx:id="password" layoutX="338.0" layoutY="445.0" visible="false" />
+      <Button fx:id="on" layoutX="514.0" layoutY="445.0" mnemonicParsing="false" onAction="#on" text="Ok" visible="false">
+         <font>
+            <Font name="Gill Sans" size="13.0" />
+         </font>
+      </Button>
    </children>
 </Pane>

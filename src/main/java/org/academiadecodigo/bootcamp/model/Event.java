@@ -11,7 +11,7 @@ public class Event {
     private String period;
     private String local;
 
-    private int numberOfPlayers;
+    private int numberOfPlayers = 0;
     private List<User> eventUsersList;
 
     public List<User> getEventUsersList() {

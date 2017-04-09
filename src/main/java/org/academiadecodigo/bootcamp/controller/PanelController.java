@@ -3,10 +3,10 @@ package org.academiadecodigo.bootcamp.controller;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import org.academiadecodigo.bootcamp.Navigation;
 import org.academiadecodigo.bootcamp.model.Event;
@@ -36,6 +36,22 @@ public class PanelController implements Initializable {
 
     @FXML
     private TableColumn nplayerscolumn;
+
+    @FXML
+    private Button on;
+
+    @FXML
+    private Label labelusername;
+
+    @FXML
+    private Label labelpassword;
+
+    @FXML
+    private TextField username;
+
+    @FXML
+    private TextField password;
+
 
     private EventService eventService;
 
@@ -100,5 +116,25 @@ public class PanelController implements Initializable {
         enlistedtable.setItems(data);
 
     }
+
+    public void modifyuserinfo(ActionEvent actionEvent) {
+
+        on.setVisible(true);
+        labelusername.setVisible(true);
+        labelpassword.setVisible(true);
+        username.setVisible(true);
+        password.setVisible(true);
+    }
+
+    public void on(ActionEvent actionEvent){
+
+
+        on.setVisible(false);
+        labelusername.setVisible(false);
+        labelpassword.setVisible(false);
+        username.setVisible(false);
+        password.setVisible(false);
+    }
+
 }
 
