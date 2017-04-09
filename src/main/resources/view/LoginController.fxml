@@ -6,73 +6,81 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<GridPane xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.academiadecodigo.bootcamp.controller.LoginController">
+<GridPane prefHeight="505.0" prefWidth="750.0" style="-fx-background-color: TRANSPARENT;" xmlns="http://javafx.com/javafx/null" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.academiadecodigo.bootcamp.controller.LoginController">
   <columnConstraints>
-      <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.55484008789062" minWidth="10.0" prefWidth="53.00832748413086" />
-      <ColumnConstraints hgrow="SOMETIMES" maxWidth="210.5022735595703" minWidth="10.0" prefWidth="207.96217346191406" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="167.0" minWidth="10.0" prefWidth="167.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="271.0" minWidth="10.0" prefWidth="168.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="155.0" minWidth="10.0" prefWidth="21.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="215.0" minWidth="10.0" prefWidth="215.0" />
     <ColumnConstraints hgrow="SOMETIMES" maxWidth="97.45989990234375" minWidth="10.0" prefWidth="39.03782653808594" />
-      <ColumnConstraints hgrow="SOMETIMES" maxWidth="97.45989990234375" minWidth="10.0" prefWidth="39.03782653808594" />
-    <ColumnConstraints hgrow="SOMETIMES" maxWidth="97.45989990234375" minWidth="10.0" prefWidth="39.03782653808594" />
-      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-      <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.80178833007812" minWidth="10.0" prefWidth="150.80178833007812" />
-      <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.55484008789062" minWidth="10.0" prefWidth="49.198211669921875" />
   </columnConstraints>
   <rowConstraints>
+      <RowConstraints maxHeight="97.0" minHeight="10.0" prefHeight="93.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="82.0" minHeight="9.0" prefHeight="82.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="76.0" minHeight="10.0" prefHeight="19.0" vgrow="SOMETIMES" />
     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
       <RowConstraints maxHeight="27.459930419921875" minHeight="10.0" prefHeight="13.489425659179688" vgrow="SOMETIMES" />
       <RowConstraints maxHeight="27.459930419921875" minHeight="10.0" prefHeight="13.489425659179688" vgrow="SOMETIMES" />
-      <RowConstraints maxHeight="46.51057434082031" minHeight="10.0" prefHeight="46.51057434082031" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
-      <Button fx:id="loginButton" mnemonicParsing="false" onAction="#onLogin" prefHeight="27.0" prefWidth="100.0" text="Login" GridPane.columnIndex="5" GridPane.rowIndex="7" />
-      <PasswordField fx:id="passwordField" GridPane.columnIndex="5" GridPane.columnSpan="2" GridPane.rowIndex="4" />
-      <TextField fx:id="cadetTextField" GridPane.columnIndex="5" GridPane.columnSpan="2" GridPane.rowIndex="3" />
-      <TextField fx:id="emailTextField" visible="false" GridPane.columnIndex="5" GridPane.columnSpan="2" GridPane.rowIndex="5" />
-      <Hyperlink fx:id="registerLink" onAction="#onRegister" text="Register" GridPane.columnIndex="5" GridPane.rowIndex="10" />
-      <Label text="Username" textAlignment="RIGHT" GridPane.columnIndex="1" GridPane.rowIndex="3">
+      <Button fx:id="loginButton" mnemonicParsing="false" onAction="#onLogin" prefHeight="27.0" prefWidth="72.0" text="Login" GridPane.columnIndex="3" GridPane.rowIndex="5">
          <font>
-            <Font size="15.0" />
+            <Font name="Gill Sans" size="13.0" />
+         </font>
+         <opaqueInsets>
+            <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+         </opaqueInsets></Button>
+      <PasswordField fx:id="passwordField" GridPane.columnIndex="3" GridPane.rowIndex="2">
+         <opaqueInsets>
+            <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+         </opaqueInsets></PasswordField>
+      <TextField fx:id="cadetTextField" prefWidth="188.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
+         <opaqueInsets>
+            <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+         </opaqueInsets></TextField>
+      <TextField fx:id="emailTextField" visible="false" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+      <Hyperlink fx:id="registerLink" alignment="BASELINE_CENTER" onAction="#onRegister" text="Register" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+      <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="16.0" prefWidth="173.0" text="User" textAlignment="RIGHT" GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <font>
+            <Font name="Gill Sans" size="15.0" />
          </font>
          <GridPane.margin>
             <Insets left="100.0" />
          </GridPane.margin>
       </Label>
-      <Label text="Password" textAlignment="RIGHT" GridPane.columnIndex="1" GridPane.rowIndex="4">
+      <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="18.0" prefWidth="114.0" text="Pass" textAlignment="RIGHT" GridPane.columnIndex="1" GridPane.rowIndex="2">
          <font>
-            <Font size="15.0" />
+            <Font name="Gill Sans" size="15.0" />
          </font>
          <GridPane.margin>
             <Insets left="100.0" />
          </GridPane.margin>
       </Label>
-      <Label fx:id="emailLabel" text="Email_" textAlignment="RIGHT" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="5">
+      <Label fx:id="emailLabel" alignment="CENTER_RIGHT" prefHeight="18.0" prefWidth="116.0" text="Email" textAlignment="RIGHT" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="3">
          <font>
-            <Font size="15.0" />
+            <Font name="Gill Sans" size="15.0" />
          </font>
          <GridPane.margin>
             <Insets left="100.0" />
          </GridPane.margin>
       </Label>
-      <Label fx:id="verificationText" prefHeight="19.0" prefWidth="197.0" text="Wrong Password...try Again" textAlignment="RIGHT" textFill="#ee0000" visible="false" GridPane.columnIndex="5" GridPane.columnSpan="2" GridPane.rowIndex="9">
+      <Label fx:id="verificationText" prefHeight="19.0" prefWidth="197.0" text="Wrong Password...try Again" textAlignment="RIGHT" textFill="#ee0000" visible="false" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="6">
          <font>
-            <Font size="15.0" />
+            <Font name="Gill Sans" size="13.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="43.0" prefWidth="262.0" text="Play Football Together" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
-         <font>
-            <Font size="18.0" />
-         </font></Label>
+      <ImageView fitHeight="180.0" fitWidth="259.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2">
+         <image>
+            <Image url="@../LogoFactory.jpg" />
+         </image>
+      </ImageView>
    </children>
 </GridPane>

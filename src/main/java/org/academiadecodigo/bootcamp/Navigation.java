@@ -19,8 +19,8 @@ public class Navigation {
 
     private static Navigation instance = null;
 
-    private final int MIN_WIDTH = 650;
-    private final int MIN_HEIGHT = 450;
+    private final int MIN_WIDTH = 750;
+    private final int MIN_HEIGHT = 505;
 
     //Navigation History
     private LinkedList<Scene> scenes = new LinkedList<Scene>();

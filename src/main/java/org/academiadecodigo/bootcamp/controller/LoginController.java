@@ -62,7 +62,7 @@ public class LoginController implements Initializable {
         if (isLogin == true) {
 
             if (userService.findByName(cadetTextField.getText()) == null) {
-                verificationText.setText(" USER NOT FOUND");
+                verificationText.setText("User not found");
                 verificationText.setVisible(true);
 
 
@@ -70,12 +70,12 @@ public class LoginController implements Initializable {
 
 
                 if (!userService.authenticate(cadetTextField.getText(), passwordField.getText())) {
-                    verificationText.setText(" WRONG PASSWORD");
+                    verificationText.setText("Wrong Password");
                     verificationText.setVisible(true);
 
 
                 } else {
-                    verificationText.setText("WELCOME");
+                    verificationText.setText("Welcome");
                     verificationText.setVisible(true);
                     navigation.loadScreen("Menu");
 
@@ -115,17 +115,17 @@ public class LoginController implements Initializable {
 
         if (isLogin) {
             verificationText.setVisible(false);
-            registerLink.setText("CLOSE");
+            registerLink.setText("Close");
             emailLabel.setVisible(true);
             emailTextField.setVisible(true);
-            loginButton.setText("REGISTER");
+            loginButton.setText("Register");
             isLogin = false;
         } else {
-            registerLink.setText("REGISTER");
+            registerLink.setText("Register");
             verificationText.setVisible(false);
             emailLabel.setVisible(false);
             emailTextField.setVisible(false);
-            loginButton.setText("LOGIN");
+            loginButton.setText("Login");
             isLogin = true;
         }
     }
