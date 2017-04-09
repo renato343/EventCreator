@@ -11,6 +11,7 @@
 
     <bean id="panelcontroller" class="org.academiadecodigo.bootcamp.controller.PanelController">
         <property name="navigation" ref="navigation"/>
+        <property name="eventService" ref="eventServiceImplementatio"/>
     </bean>
 
 
