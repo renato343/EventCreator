@@ -18,5 +18,7 @@ public interface EventDao extends InterfaceDao<Event> {
 
     Event readByPeriod(String period);
 
+    Event getEvent(String local, String period);
+
 
 }

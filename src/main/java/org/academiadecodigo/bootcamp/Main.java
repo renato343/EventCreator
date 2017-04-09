@@ -17,6 +17,9 @@ public class Main extends Application {
 
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("springconfig/spring-config.xml");
         navigation = applicationContext.getBean(Navigation.class);
+
+        hibernateSessionManager = applicationContext.getBean("hibernateSessionManager",HibernateSessionManager.class);
+
         navigation.setStage(primaryStage);
         navigation.loadScreen("LoginController");
 

@@ -11,8 +11,9 @@ import org.hibernate.Session;
  */
 public class HibernateUserDao extends AbstractDao<User> implements UserDao{
 
-
     public HibernateUserDao() {
+
+        this.classType = User.class;
 
     }
 

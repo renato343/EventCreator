@@ -88,7 +88,7 @@ public abstract class AbstractDao<T> implements InterfaceDao<T> {
             return allUsers;
 
         }catch (HibernateException ex){
-            throw new TransactionException(ex.getMessage(),ex);
+            throw new TransactionException(ex.getMessage(), ex);
         }
 
     }

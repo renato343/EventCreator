@@ -9,6 +9,6 @@
     </bean>
 
     <bean id="eventServiceImplementatio" class="org.academiadecodigo.bootcamp.service.event.EventServiceImpl">
-        <property name="eventDao" ref="hibernateEventDao"/>
+        <constructor-arg name="eventDao" ref="hibernateEventDao"/>
     </bean>
 </beans>

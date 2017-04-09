@@ -165,7 +165,6 @@ public class LogedController implements Initializable {
         event.setLocal(filterlocal.getText());
         event.setPeriod(filterperiod.getText());
         event.setType(filtertype.getText());
-
         eventService.addEvent(event);
 
     }
