@@ -76,6 +76,7 @@ public class EventServiceImpl implements EventService {
         return event;
     }
 
+    @Transactional
     @Override
     public List findAll() {
 

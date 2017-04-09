@@ -16,6 +16,7 @@ import org.hibernate.mapping.Array;
 import org.hibernate.mapping.Table;
 
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class LogedController implements Initializable {
@@ -90,6 +91,9 @@ public class LogedController implements Initializable {
     private TableColumn periodcolumn;
 
     @FXML
+    private TableColumn nplayerscolumn;
+
+    @FXML
     private Button filternow;
 
     @FXML
@@ -97,27 +101,6 @@ public class LogedController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        ObservableList<Event> data =
-                FXCollections.observableArrayList(
-                        new Event("Football", "Morning", "Campo1"),
-                        new Event("Football", "Morning", "Campo2")
-                );
-
-
-        localcolumn.setCellValueFactory(new PropertyValueFactory<Event, String>("local"));
-
-
-        typecolumn.setCellValueFactory(
-                new PropertyValueFactory<Event, String>("type")
-        );
-
-        periodcolumn.setCellValueFactory(
-                new PropertyValueFactory<Event, String>("period")
-        );
-
-        eventtable.setItems(data);
-
-
         welcomelabel.setText("Welcome " + userService.getUserAuth());
     }
 
@@ -140,6 +123,32 @@ public class LogedController implements Initializable {
         createnow.setVisible(false);
         filternow.setVisible(true);
         joinevent.setVisible(true);
+
+        List<Event> eventstotal = eventService.findAll();
+
+        ObservableList<Event> data = FXCollections.observableArrayList();
+
+        for (Event el: eventstotal)
+              {
+                  data.add(el);
+        }
+
+        localcolumn.setCellValueFactory(new PropertyValueFactory<Event, String>("local"));
+
+
+        typecolumn.setCellValueFactory(
+                new PropertyValueFactory<Event, String>("type")
+        );
+
+        periodcolumn.setCellValueFactory(
+                new PropertyValueFactory<Event, String>("period")
+        );
+
+        nplayerscolumn.setCellValueFactory(
+                new PropertyValueFactory<Event, Integer>("numberOfPlayers")
+        );
+
+        eventtable.setItems(data);
 
     }
 
@@ -206,5 +215,9 @@ public class LogedController implements Initializable {
     }
 
     public void joinevent(ActionEvent actionEvent) {
+
+        Event event = (Event) eventtable.getSelectionModel().getSelectedItem();
+
+
     }
 }
