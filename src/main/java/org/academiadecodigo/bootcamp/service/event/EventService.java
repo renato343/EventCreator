@@ -23,4 +23,6 @@ public interface EventService extends Service{
 
     int count();
 
+    void updateEvent(Event event);
+
 }

@@ -12,6 +12,12 @@
         <property name="type" column="type" type="string"/>
         <property name="local" column="local" type="string"/>
         <property name="period" column="period" type="string"/>
+        <property name="numberOfPlayers" column="numberOfPlayers" type="int"/>
+
+        <set name="eventUsersList" table="user_event" cascade="all">
+            <key column="event_id"/>
+            <many-to-many class="org.academiadecodigo.bootcamp.model.User" column="user_id"/>
+        </set>
 
     </class>
 
