@@ -13,18 +13,12 @@ public class UserServiceImpl implements UserService {
     private boolean isAuthenticate = false;
     private String userAuth;
 
+    
     public UserServiceImpl( UserDao userDao) {
         this.userDao = userDao;
     }
 
-    public UserDao getUserDao() {
-        return userDao;
-    }
-
-    public void setUserDao(UserDao userDao) {
-        this.userDao = userDao;
-    }
-
+    
     @Override
     public String getName() {
         return UserService.class.getSimpleName();
@@ -92,4 +86,5 @@ public class UserServiceImpl implements UserService {
         count = userDao.count();
         return count;
     }
+    
 }
