@@ -49,6 +49,9 @@ public class LogedController implements Initializable {
 
 
     @FXML
+    private Label eventcreated;
+
+    @FXML
     private Label welcomelabel;
 
     @FXML
@@ -112,7 +115,7 @@ public class LogedController implements Initializable {
         eventtable.setVisible(false);
         joinevent.setVisible(false);
         filternow.setVisible(false);
-
+        eventcreated.setVisible(false);
     }
 
     public void viewevents(ActionEvent actionEvent) {
@@ -123,6 +126,7 @@ public class LogedController implements Initializable {
         createnow.setVisible(false);
         filternow.setVisible(true);
         joinevent.setVisible(true);
+        eventcreated.setVisible(false);
 
         List<Event> eventstotal = eventService.findAll();
 
@@ -175,6 +179,7 @@ public class LogedController implements Initializable {
         event.setPeriod(filterperiod.getText());
         event.setType(filtertype.getText());
         eventService.addEvent(event);
+        eventcreated.setVisible(true);
 
     }
 

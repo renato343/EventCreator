@@ -20,6 +20,7 @@
       <ColumnConstraints hgrow="SOMETIMES" maxWidth="155.0" minWidth="10.0" prefWidth="21.0" />
       <ColumnConstraints hgrow="SOMETIMES" maxWidth="215.0" minWidth="10.0" prefWidth="215.0" />
     <ColumnConstraints hgrow="SOMETIMES" maxWidth="97.45989990234375" minWidth="10.0" prefWidth="39.03782653808594" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="97.45989990234375" minWidth="10.0" prefWidth="39.03782653808594" />
   </columnConstraints>
   <rowConstraints>
       <RowConstraints maxHeight="97.0" minHeight="10.0" prefHeight="93.0" vgrow="SOMETIMES" />
@@ -56,7 +57,7 @@
             <Insets left="100.0" />
          </GridPane.margin>
       </Label>
-      <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="18.0" prefWidth="114.0" text="Pass" textAlignment="RIGHT" GridPane.columnIndex="1" GridPane.rowIndex="2">
+      <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="18.0" prefWidth="126.0" text="Pass" textAlignment="RIGHT" GridPane.columnIndex="1" GridPane.rowIndex="2">
          <font>
             <Font name="Gill Sans" size="15.0" />
          </font>
@@ -77,10 +78,22 @@
             <Font name="Gill Sans" size="13.0" />
          </font>
       </Label>
-      <ImageView fitHeight="180.0" fitWidth="259.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2">
+      <ImageView fitHeight="211.0" fitWidth="282.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2">
          <image>
             <Image url="@../LogoFactory.jpg" />
          </image>
       </ImageView>
+      <ImageView fitHeight="44.0" fitWidth="169.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+         <image>
+            <Image url="@../iso90013.jpg" />
+         </image>
+      </ImageView>
+      <Label alignment="CENTER" contentDisplay="CENTER" graphicTextGap="1.0" nodeOrientation="RIGHT_TO_LEFT" text=" Find or create your own Event!" textAlignment="CENTER" textFill="#0b5bbc75" GridPane.columnSpan="5">
+         <font>
+            <Font name="Gill Sans Light Italic" size="61.0" />
+         </font>
+         <opaqueInsets>
+            <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+         </opaqueInsets></Label>
    </children>
 </GridPane>
