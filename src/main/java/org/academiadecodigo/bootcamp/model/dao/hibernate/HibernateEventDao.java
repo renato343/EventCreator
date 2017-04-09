@@ -5,13 +5,15 @@ import org.academiadecodigo.bootcamp.model.dao.EventDao;
 import org.hibernate.Query;
 import org.hibernate.Session;
 
-
 /**
  * Created by codecadet on 06/04/17.
  */
 public class HibernateEventDao extends AbstractDao<Event> implements EventDao {
 
+    public HibernateEventDao() {
 
+        this.classType = Event.class;
+    }
 
     public Event readById(Integer id){
 
@@ -29,29 +31,31 @@ public class HibernateEventDao extends AbstractDao<Event> implements EventDao {
         Session session = getHibernateSessionManager().getSession();
         Query query = session.createQuery("from event where type = :type");
         query.setString("type", type);
-        Event object = (Event) query.uniqueResult();
-        return object;
+        return (Event) query.uniqueResult();
 
     }
 
     @Override
     public Event readByLocal(String local) {
 
+//        String temp[] = local.split(" ");
+//        String toFind = temp[0] + temp[1];
+
         Session session = getHibernateSessionManager().getSession();
-        Query query = session.createQuery("from event where local = :local");
+        Query query = session.createQuery("from Event where local = :local");
         query.setString("local", local);
-        Event object = (Event) query.uniqueResult();
-        return object;
+        Event event = (Event) query.uniqueResult();
+        return event;
     }
 
     @Override
     public Event readByPeriod(String period) {
 
         Session session = getHibernateSessionManager().getSession();
-        Query query = session.createQuery("from event where period = :period");
+        Query query = session.createQuery("from Event where period = :period");
         query.setString("period", period);
-        Event object = (Event) query.uniqueResult();
-        return object;
+        Event event = (Event) query.uniqueResult();
+        return event;
     }
 
 

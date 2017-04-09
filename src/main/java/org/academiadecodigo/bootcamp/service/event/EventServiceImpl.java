@@ -2,6 +2,7 @@ package org.academiadecodigo.bootcamp.service.event;
 
 import org.academiadecodigo.bootcamp.model.Event;
 import org.academiadecodigo.bootcamp.model.dao.EventDao;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -13,11 +14,12 @@ public class EventServiceImpl implements EventService {
     private EventDao eventDao;
     private List eventsList;
 
-    public EventServiceImpl() {
-    }
 
     public EventServiceImpl(EventDao eventDao) {
         this.eventDao = eventDao;
+    }
+
+    public EventServiceImpl() {
     }
 
     public EventDao getEventDao() {
@@ -28,19 +30,29 @@ public class EventServiceImpl implements EventService {
         this.eventDao = eventDao;
     }
 
+    @Transactional
     @Override
     public String getName() {
         return EventService.class.getSimpleName();
     }
 
+    @Transactional
     @Override
-    public void addEvent(Event event) {
+    public void addEvent(Event eventToBeLocated) {
 
-        if(!findAll().contains(event)) {
-            eventDao.create(event);
+        System.out.println(eventToBeLocated.getLocal());
+        System.out.println(eventToBeLocated.getPeriod());
+
+        if(eventDao.readByLocal(eventToBeLocated.getLocal()) == null ||
+                eventDao.readByPeriod(eventToBeLocated.getPeriod()) == null){
+            System.out.println("vou adicionar");
+            eventDao.create(eventToBeLocated);
+        }else {
+            System.out.println("nao adicionei");
         }
 
     }
+
 
     @Override
     public Event findByType(String type) {

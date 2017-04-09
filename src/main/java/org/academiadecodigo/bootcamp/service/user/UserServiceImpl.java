@@ -4,7 +4,6 @@ import org.academiadecodigo.bootcamp.model.User;
 import org.academiadecodigo.bootcamp.model.dao.UserDao;
 import org.springframework.transaction.annotation.Transactional;
 
-
 /**
  * Created by codecadet on 23/03/17.
  */
