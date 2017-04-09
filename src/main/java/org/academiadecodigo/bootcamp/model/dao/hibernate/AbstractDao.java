@@ -58,8 +58,7 @@ public abstract class AbstractDao<T> implements InterfaceDao<T> {
 
             Session session = hibernateSessionManager.getSession();
             Query query = session.createQuery("update " + classType.getSimpleName());
-
-
+            //TODO query to update
         }catch (HibernateException ex){
             throw new TransactionException(ex.getMessage(),ex);
         }

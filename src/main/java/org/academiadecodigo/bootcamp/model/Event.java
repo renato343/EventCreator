@@ -1,24 +1,26 @@
 package org.academiadecodigo.bootcamp.model;
 
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created by codecadet on 05/04/17.
  */
 public class Event {
+
     private Integer id;
     private String type;
     private String period;
     private String local;
 
     private int numberOfPlayers;
-    private List<User> eventUsersList;
+    private Set<User> eventUsersList;
 
-    public List<User> getEventUsersList() {
+    public Set<User> getEventUsersList() {
         return eventUsersList;
     }
 
-    public void setEventUsersList(List<User> eventUsersList) {
+    public void setEventUsersList(Set<User> eventUsersList) {
         this.eventUsersList = eventUsersList;
     }
 
