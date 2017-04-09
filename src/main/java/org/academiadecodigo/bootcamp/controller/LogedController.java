@@ -221,5 +221,9 @@ public class LogedController implements Initializable {
     }
 
     public void joinevent(ActionEvent actionEvent) {
+
+        Event event = (Event) eventtable.getSelectionModel().getSelectedItem();
+
+
     }
 }
