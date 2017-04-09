@@ -94,5 +94,10 @@
             <Image url="@../LogoFactory.jpg" />
          </image>
       </ImageView>
+      <Label fx:id="eventcreated" layoutX="331.0" layoutY="434.0" text="Event created" visible="false">
+         <font>
+            <Font name="Gill Sans" size="13.0" />
+         </font>
+      </Label>
    </children>
 </Pane>

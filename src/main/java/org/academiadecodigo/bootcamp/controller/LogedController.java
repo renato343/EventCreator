@@ -46,6 +46,9 @@ public class LogedController implements Initializable {
 
 
     @FXML
+    private Label eventcreated;
+
+    @FXML
     private Label welcomelabel;
 
     @FXML
@@ -96,11 +99,8 @@ public class LogedController implements Initializable {
     @FXML
     private Button joinevent;
 
-
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
         welcomelabel.setText("Welcome " + userService.getUserAuth());
     }
 
@@ -112,7 +112,7 @@ public class LogedController implements Initializable {
         eventtable.setVisible(false);
         joinevent.setVisible(false);
         filternow.setVisible(false);
-
+        eventcreated.setVisible(false);
     }
 
     public void viewevents(ActionEvent actionEvent) {
@@ -123,6 +123,7 @@ public class LogedController implements Initializable {
         createnow.setVisible(false);
         filternow.setVisible(true);
         joinevent.setVisible(true);
+        eventcreated.setVisible(false);
 
         List<Event> eventstotal = eventService.findAll();
 
@@ -179,6 +180,7 @@ public class LogedController implements Initializable {
         System.out.println(userService.findByName(userService.getUserAuth()));
 //        event.getEventUsersList().add(userService.findByName(userService.getUserAuth()));
         eventService.addEvent(event);
+        eventcreated.setVisible(true);
 
     }
 

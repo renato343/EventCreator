@@ -8,12 +8,13 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="505.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.academiadecodigo.bootcamp.controller.PanelController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="505.0" prefWidth="750.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/null" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.academiadecodigo.bootcamp.controller.PanelController">
    <children>
       <Label layoutX="59.0" layoutY="42.0" text="Control Panel">
          <font>
@@ -24,7 +25,7 @@
          <font>
             <Font name="Gill Sans" size="13.0" />
          </font></Button>
-      <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="600.0">
+      <MenuBar layoutY="2.0" prefHeight="29.0" prefWidth="750.0">
         <menus>
           <Menu mnemonicParsing="false" text="Menu">
             <items>
@@ -38,17 +39,43 @@
             <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
          </opaqueInsets>
       </MenuBar>
-      <TableView fx:id="enlistedtable" layoutX="59.0" layoutY="129.0" prefHeight="242.0" prefWidth="505.0" visible="false">
+      <TableView fx:id="enlistedtable" layoutX="59.0" layoutY="129.0" prefHeight="242.0" prefWidth="628.0" visible="false">
         <columns>
           <TableColumn prefWidth="235.0" text="Local" />
           <TableColumn prefWidth="115.0" text="Type" />
             <TableColumn prefWidth="154.0" text="Period" />
         </columns>
       </TableView>
-      <ImageView fitHeight="44.0" fitWidth="59.0" layoutY="349.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="44.0" fitWidth="59.0" layoutX="7.0" layoutY="450.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../LogoFactory.jpg" />
          </image>
       </ImageView>
+      <Button fx:id="modifyuserinfo" layoutX="59.0" layoutY="385.0" mnemonicParsing="false" onAction="#modifyuserinfo" text="Modify User Info">
+         <font>
+            <Font name="Gill Sans" size="13.0" />
+         </font>
+      </Button>
+      <Button fx:id="removefrom" layoutX="563.0" layoutY="385.0" mnemonicParsing="false" text="Remove from Event">
+         <font>
+            <Font name="Gill Sans" size="13.0" />
+         </font>
+      </Button>
+      <Label fx:id="eventremoved" layoutX="332.0" layoutY="433.0" prefHeight="17.0" prefWidth="99.0" text="Event removed" visible="false" />
+      <Label fx:id="labelusername" layoutX="208.0" layoutY="416.0" text="Input new Username:" visible="false">
+         <font>
+            <Font name="Gill Sans" size="13.0" />
+         </font></Label>
+      <Label fx:id="labelpassword" layoutX="209.0" layoutY="450.0" text="Input new Password:" visible="false">
+         <font>
+            <Font name="Gill Sans" size="13.0" />
+         </font></Label>
+      <TextField fx:id="username" layoutX="338.0" layoutY="411.0" visible="false" />
+      <TextField fx:id="password" layoutX="338.0" layoutY="445.0" visible="false" />
+      <Button fx:id="on" layoutX="514.0" layoutY="445.0" mnemonicParsing="false" onAction="#on" text="Ok" visible="false">
+         <font>
+            <Font name="Gill Sans" size="13.0" />
+         </font>
+      </Button>
    </children>
 </Pane>

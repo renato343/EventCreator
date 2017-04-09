@@ -13,14 +13,14 @@ public class Event {
     private String period;
     private String local;
 
-    private int numberOfPlayers;
-    private Set<User> eventUsersList;
+    private int numberOfPlayers = 0;
+    private List<User> eventUsersList;
 
-    public Set<User> getEventUsersList() {
+    public List<User> getEventUsersList() {
         return eventUsersList;
     }
 
-    public void setEventUsersList(Set<User> eventUsersList) {
+    public void setEventUsersList(List<User> eventUsersList) {
         this.eventUsersList = eventUsersList;
     }
 
@@ -35,11 +35,11 @@ public class Event {
     public Event() {
     }
 
-    public Event(String type, String period, String local, Set<User> eventUsersList) {
+    public Event(String type, String period, String local) {
         this.type = type;
         this.period = period;
         this.local = local;
-        this.eventUsersList = eventUsersList;
+
     }
 
     public String getType() {
