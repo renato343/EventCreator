@@ -84,7 +84,7 @@
       </MenuBar>
       <Button fx:id="filternow" layoutX="63.0" layoutY="415.0" mnemonicParsing="false" onAction="#filternow" text="Filter now" visible="false" />
       <Button fx:id="joinevent" layoutX="596.0" layoutY="415.0" mnemonicParsing="false" onAction="#joinevent" text="Join Event" />
-      <Button fx:id="controlpanels" layoutX="591.0" layoutY="69.0" mnemonicParsing="false" onAction="#viewevents" text="Control Panel" textAlignment="CENTER">
+      <Button fx:id="controlpanels" layoutX="591.0" layoutY="69.0" mnemonicParsing="false" onAction="#controlpanel" text="Control Panel" textAlignment="CENTER">
          <font>
             <Font name="Gill Sans" size="13.0" />
          </font>
