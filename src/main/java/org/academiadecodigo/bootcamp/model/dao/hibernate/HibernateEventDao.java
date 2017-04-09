@@ -38,9 +38,6 @@ public class HibernateEventDao extends AbstractDao<Event> implements EventDao {
     @Override
     public Event readByLocal(String local) {
 
-//        String temp[] = local.split(" ");
-//        String toFind = temp[0] + temp[1];
-
         Session session = getHibernateSessionManager().getSession();
         Query query = session.createQuery("from Event where local = :local");
         query.setString("local", local);
@@ -54,6 +51,16 @@ public class HibernateEventDao extends AbstractDao<Event> implements EventDao {
         Session session = getHibernateSessionManager().getSession();
         Query query = session.createQuery("from Event where period = :period");
         query.setString("period", period);
+        Event event = (Event) query.uniqueResult();
+        return event;
+    }
+
+    public Event getEvent(String local, String period){
+
+        Session session = getHibernateSessionManager().getSession();
+        Query query = session.createQuery("from Event where period = :period and local = :local");
+        query.setString("period", period);
+        query.setString("local", local);
         Event event = (Event) query.uniqueResult();
         return event;
     }

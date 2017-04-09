@@ -43,14 +43,12 @@ public class EventServiceImpl implements EventService {
         System.out.println(eventToBeLocated.getLocal());
         System.out.println(eventToBeLocated.getPeriod());
 
-        if(eventDao.readByLocal(eventToBeLocated.getLocal()) == null ||
-                eventDao.readByPeriod(eventToBeLocated.getPeriod()) == null){
+        if (eventDao.getEvent(eventToBeLocated.getLocal(), eventToBeLocated.getPeriod()) == null) {
             System.out.println("vou adicionar");
             eventDao.create(eventToBeLocated);
-        }else {
+        } else {
             System.out.println("nao adicionei");
         }
-
     }
 
 
@@ -77,7 +75,6 @@ public class EventServiceImpl implements EventService {
         event = eventDao.readByLocal(name);
         return event;
     }
-
 
     @Override
     public List findAll() {
