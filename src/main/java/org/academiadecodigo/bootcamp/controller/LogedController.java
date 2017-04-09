@@ -219,7 +219,7 @@ public class LogedController implements Initializable {
         Event event = (Event) eventtable.getSelectionModel().getSelectedItem();
         event.setNumberOfPlayers(1);
         event.getEventUsersList().add(userService.findByName(userService.getUserAuth()));
-        eventService.updateEvent(event);
+        eventService.updateEvent(event, userService.findByName(userService.getUserAuth()));
 
 
 

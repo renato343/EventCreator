@@ -1,8 +1,7 @@
 package org.academiadecodigo.bootcamp.model.dao;
 
 import org.academiadecodigo.bootcamp.model.Event;
-
-import java.util.List;
+import org.academiadecodigo.bootcamp.model.User;
 
 /**
  * Created by codecadet on 06/04/17.
@@ -20,5 +19,5 @@ public interface EventDao extends InterfaceDao<Event> {
 
     Event getEvent(String local, String period);
 
-
+    void updateUserevent(Event event, User user);
 }

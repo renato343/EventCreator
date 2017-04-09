@@ -1,6 +1,7 @@
 package org.academiadecodigo.bootcamp.service.event;
 
 import org.academiadecodigo.bootcamp.model.Event;
+import org.academiadecodigo.bootcamp.model.User;
 import org.academiadecodigo.bootcamp.model.dao.EventDao;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -85,7 +86,7 @@ public class EventServiceImpl implements EventService {
     }
 
     @Override
-    public void updateEvent(Event event) {
-        eventDao.update(event);
+    public void updateEvent(Event event, User user) {
+        eventDao.updateUserevent(event, user);
     }
 }

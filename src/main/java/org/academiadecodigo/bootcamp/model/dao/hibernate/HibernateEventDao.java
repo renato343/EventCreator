@@ -1,6 +1,7 @@
 package org.academiadecodigo.bootcamp.model.dao.hibernate;
 
 import org.academiadecodigo.bootcamp.model.Event;
+import org.academiadecodigo.bootcamp.model.User;
 import org.academiadecodigo.bootcamp.model.dao.EventDao;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -63,6 +64,16 @@ public class HibernateEventDao extends AbstractDao<Event> implements EventDao {
         query.setString("local", local);
         Event event = (Event) query.uniqueResult();
         return event;
+    }
+
+    @Override
+    public void updateUserevent(Event event, User user) {
+
+        Session session = hibernateSessionManager.getSession();
+        Query query = session.createQuery("update user_event set event_id = :eventid, user_id = :userid");
+        query.setString("eventid", String.valueOf(event.getId()));
+        query.setString("userid", String.valueOf(user.getId()));
+
     }
 
 
