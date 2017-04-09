@@ -104,21 +104,21 @@ public class LogedController implements Initializable {
                 );
 
 
-        localcolumn.setCellValueFactory(new PropertyValueFactory<Event,String>("local"));
+        localcolumn.setCellValueFactory(new PropertyValueFactory<Event, String>("local"));
 
 
         typecolumn.setCellValueFactory(
-                new PropertyValueFactory<Event,String>("type")
+                new PropertyValueFactory<Event, String>("type")
         );
 
         periodcolumn.setCellValueFactory(
-                new PropertyValueFactory<Event,String>("period")
+                new PropertyValueFactory<Event, String>("period")
         );
 
         eventtable.setItems(data);
 
 
-        welcomelabel.setText("Welcome "+ userService.getUserAuth());
+        welcomelabel.setText("Welcome " + userService.getUserAuth());
     }
 
     public void createevent(ActionEvent actionEvent) {
