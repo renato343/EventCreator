@@ -33,9 +33,6 @@ public class EventServiceImpl implements EventService {
     @Override
     public void addEvent(Event eventToBeLocated) {
 
-        System.out.println(eventToBeLocated.getLocal());
-        System.out.println(eventToBeLocated.getPeriod());
-
         if (eventDao.getEvent(eventToBeLocated.getLocal(), eventToBeLocated.getPeriod()) == null) {
             System.out.println("vou adicionar");
             eventDao.create(eventToBeLocated);

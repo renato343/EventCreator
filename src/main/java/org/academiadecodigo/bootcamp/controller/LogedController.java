@@ -174,6 +174,10 @@ public class LogedController implements Initializable {
         event.setLocal(filterlocal.getText());
         event.setPeriod(filterperiod.getText());
         event.setType(filtertype.getText());
+        event.setNumberOfPlayers(1);
+        System.out.println("fucking list :" +  event.getEventUsersList());
+        System.out.println(userService.findByName(userService.getUserAuth()));
+//        event.getEventUsersList().add(userService.findByName(userService.getUserAuth()));
         eventService.addEvent(event);
 
     }

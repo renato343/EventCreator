@@ -35,10 +35,11 @@ public class Event {
     public Event() {
     }
 
-    public Event(String type, String period, String local) {
+    public Event(String type, String period, String local, Set<User> eventUsersList) {
         this.type = type;
         this.period = period;
         this.local = local;
+        this.eventUsersList = eventUsersList;
     }
 
     public String getType() {
