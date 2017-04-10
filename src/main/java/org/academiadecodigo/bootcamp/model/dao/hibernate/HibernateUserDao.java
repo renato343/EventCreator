@@ -2,7 +2,9 @@ package org.academiadecodigo.bootcamp.model.dao.hibernate;
 
 import org.academiadecodigo.bootcamp.model.User;
 import org.academiadecodigo.bootcamp.model.dao.UserDao;
+import org.academiadecodigo.bootcamp.persistence.TransactionException;
 import org.academiadecodigo.bootcamp.persistence.hibernate.HibernateSessionManager;
+import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
 

@@ -9,6 +9,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import org.academiadecodigo.bootcamp.Navigation;
 import org.academiadecodigo.bootcamp.model.Event;
+import org.academiadecodigo.bootcamp.model.User;
 import org.academiadecodigo.bootcamp.service.event.EventService;
 import org.academiadecodigo.bootcamp.service.user.UserService;
 
@@ -129,9 +130,8 @@ public class LogedController implements Initializable {
 
         ObservableList<Event> data = FXCollections.observableArrayList();
 
-        for (Event el: eventstotal)
-              {
-                  data.add(el);
+        for (Event el : eventstotal) {
+            data.add(el);
         }
 
         localcolumn.setCellValueFactory(new PropertyValueFactory<Event, String>("local"));
@@ -145,9 +145,9 @@ public class LogedController implements Initializable {
                 new PropertyValueFactory<Event, String>("period")
         );
 
-        nplayerscolumn.setCellValueFactory(
-                new PropertyValueFactory<Event, Integer>("numberOfPlayers")
-        );
+//        nplayerscolumn.setCellValueFactory(
+//                new PropertyValueFactory<Event, Integer>("numberOfPlayers")
+//        );
 
         eventtable.setItems(data);
 
@@ -175,10 +175,8 @@ public class LogedController implements Initializable {
         event.setLocal(filterlocal.getText());
         event.setPeriod(filterperiod.getText());
         event.setType(filtertype.getText());
-        event.setNumberOfPlayers(1);
-        System.out.println("fucking list :" +  event.getEventUsersList());
-        System.out.println(userService.findByName(userService.getUserAuth()));
-//        event.getEventUsersList().add(userService.findByName(userService.getUserAuth()));
+        event.setNumberOfPlayers(0);
+        event.getEventUsersList().add(userService.findByName(userService.getUserAuth()));
         eventService.addEvent(event);
         eventcreated.setVisible(true);
 
@@ -222,11 +220,11 @@ public class LogedController implements Initializable {
 
     public void joinevent(ActionEvent actionEvent) {
 
+        System.out.println(eventtable.getSelectionModel().getSelectedItem());
         Event event = (Event) eventtable.getSelectionModel().getSelectedItem();
         event.setNumberOfPlayers(1);
         event.getEventUsersList().add(userService.findByName(userService.getUserAuth()));
         eventService.updateEvent(event, userService.findByName(userService.getUserAuth()));
-
 
 
     }

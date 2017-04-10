@@ -6,6 +6,7 @@ import org.academiadecodigo.bootcamp.model.dao.EventDao;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created by codecadet on 06/04/17.
@@ -82,6 +83,7 @@ public class EventServiceImpl implements EventService {
         return count;
     }
 
+    @Transactional
     @Override
     public void updateEvent(Event event, User user) {
         eventDao.updateUserevent(event, user);

@@ -14,11 +14,11 @@
         <property name="period" column="period" type="string"/>
         <property name="numberOfPlayers" column="numberOfPlayers" type="int"/>
 
-        <set name="eventUsersList" table="user_event" cascade="all">
+        <list name="eventUsersList" lazy="false" inverse="true" table="events_users">
             <key column="event_id"/>
+            <index column="idx"/>
             <many-to-many class="org.academiadecodigo.bootcamp.model.User" column="user_id"/>
-        </set>
-
+        </list>
     </class>
 
 </hibernate-mapping>

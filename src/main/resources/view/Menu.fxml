@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.academiadecodigo.bootcamp.controller.LogedController">
+<Pane style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.academiadecodigo.bootcamp.controller.LogedController">
    <children>
       <Button fx:id="createevent" graphicTextGap="2.0" layoutX="60.0" layoutY="69.0" mnemonicParsing="false" onAction="#createevent" text="Create Event" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS">
          <font>
@@ -64,7 +64,7 @@
           <TableColumn fx:id="localcolumn" prefWidth="230.0" text="Local" />
           <TableColumn fx:id="typecolumn" prefWidth="114.0" text="Type" />
             <TableColumn fx:id="periodcolumn" prefWidth="146.0" text="Period" />
-            <TableColumn fx:id="nplayerscolumn" prefWidth="133.0" text="NºPlayers" />
+            <TableColumn fx:id="nplayerscolumn" prefWidth="133.0" text="NºPlayers" visible="false" />
         </columns>
       </TableView>
       <MenuBar layoutY="2.0" prefHeight="29.0" prefWidth="750.0" style="-fx-background-insets: 2;">

@@ -70,9 +70,11 @@ public class HibernateEventDao extends AbstractDao<Event> implements EventDao {
     public void updateUserevent(Event event, User user) {
 
         Session session = hibernateSessionManager.getSession();
-        Query query = session.createQuery("update user_event set event_id = :eventid, user_id = :userid");
-        query.setString("eventid", String.valueOf(event.getId()));
-        query.setString("userid", String.valueOf(user.getId()));
+        Query query = session.createQuery("update Event set numberOfPlayers = :numberOfPlayers");
+        query.setString("numberOfPlayers", String.valueOf(event.getNumberOfPlayers()));
+        query.executeUpdate();
+
+
 
     }
 

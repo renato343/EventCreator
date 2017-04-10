@@ -13,10 +13,11 @@
         <property name="name" column="name" type="string"/>
         <property name="password" column="password" type="string"/>
 
-        <!--<set name="events" table="user_event" cascade="all">-->
-            <!--<key column="user_id"/>-->
-            <!--<many-to-many class="org.academiadecodigo.bootcamp.model.Event" column="event_id" />-->
-        <!--</set>-->
+        <list name="events" lazy="false" inverse="false" table="events_users">
+            <key column="user_id"/>
+            <index column="idx"/>
+            <many-to-many class="org.academiadecodigo.bootcamp.model.Event" column="event_id"/>
+        </list>
 
     </class>
 

@@ -1,7 +1,7 @@
 package org.academiadecodigo.bootcamp.model;
 
+import java.util.LinkedList;
 import java.util.List;
-import java.util.Set;
 
 /**
  * Created by codecadet on 05/04/17.
@@ -13,8 +13,9 @@ public class Event {
     private String period;
     private String local;
 
-    private int numberOfPlayers = 0;
+    private int numberOfPlayers;
     private List<User> eventUsersList;
+
 
     public List<User> getEventUsersList() {
         return eventUsersList;
@@ -33,13 +34,7 @@ public class Event {
     }
 
     public Event() {
-    }
-
-    public Event(String type, String period, String local) {
-        this.type = type;
-        this.period = period;
-        this.local = local;
-
+        this.eventUsersList = new LinkedList<>();
     }
 
     public String getType() {

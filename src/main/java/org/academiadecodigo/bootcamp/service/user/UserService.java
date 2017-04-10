@@ -19,5 +19,7 @@ public interface UserService extends Service {
     String getUserAuth();
 
     int count();
-    
+
+    void updateUser(User user);
+
 }
